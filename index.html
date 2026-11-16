@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доска заметок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="icon" aria-hidden="true">✎</div>
+            <h1>Доска заметок</h1>
+        </header>
+
+        <form id="noteForm">
+            <label for="taskInput">Текст стикера</label>
+            <div class="input-row">
+                <input type="text" id="taskInput" placeholder="Например, подготовиться к зачёту" maxlength="300">
+                <button type="submit" class="primary">Добавить</button>
+            </div>
+            <p id="message" role="status">Перетаскивайте стикеры между полями и внутри доски.</p>
+        </form>
+
+        <div class="workspace">
+            <section class="panel">
+                <div class="section-heading">
+                    <h2>Мои стикеры</h2>
+                    <button type="button" id="clearList" class="clear">Очистить</button>
+                </div>
+                <p class="hint">Новые заметки появляются здесь.</p>
+                <div id="taskList" class="note-list" aria-label="Поле со стикерами"></div>
+            </section>
+
+            <section class="board-panel">
+                <div class="section-heading">
+                    <h2>Моя доска</h2>
+                    <button type="button" id="clearBoard" class="clear">Очистить</button>
+                </div>
+                <p class="hint">Размещайте заметки в любом месте, даже друг на друге.</p>
+                <div id="board" aria-label="Доска для свободного размещения стикеров"></div>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
