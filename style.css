@@ -1,0 +1,42 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 28px; background: #f3f1ec; color: #363b39; font-family: Arial, sans-serif; }
+main { max-width: 1400px; margin: auto; }
+header { text-align: center; margin-bottom: 24px; }
+.icon { margin: auto; width: 42px; height: 42px; line-height: 42px; font-size: 28px; border-radius: 12px; background: #e0e8df; color: #48644e; }
+h1 { font-size: 30px; margin: 10px 0; }
+header p, .hint { color: #68706b; font-size: 14px; line-height: 1.5; }
+form { background: white; padding: 20px; border: 1px solid #dedfd8; border-radius: 12px; margin-bottom: 24px; }
+label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: bold; }
+.input-row { display: flex; gap: 10px; }
+input { min-width: 0; flex: 1; font: inherit; padding: 12px; border: 1px solid #c9cfc6; border-radius: 7px; }
+button { font: inherit; cursor: pointer; border-radius: 7px; }
+.primary { padding: 12px 22px; border: 0; background: #526f58; color: white; }
+.primary:hover { background: #3e5843; }
+input:focus-visible, button:focus-visible { outline: 3px solid #8cae98; outline-offset: 2px; }
+#message { font-size: 13px; color: #626c64; margin: 12px 0 0; }
+.workspace { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 24px; align-items: start; }
+.panel, .board-panel { min-width: 0; padding: 18px; border-radius: 12px; background: white; border: 1px solid #dedfd8; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+h2 { font-size: 18px; margin: 0; }
+.clear { padding: 7px 10px; border: 1px solid #d3d8d0; background: #f8f9f6; font-size: 12px; color: #535e55; }
+.clear:hover { background: #e8ede5; }
+.hint { font-size: 12px; margin: 10px 0 16px; }
+.note-list { min-height: 550px; padding: 10px; border: 2px dashed #dde2d8; border-radius: 8px; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+#board { position: relative; height: 600px; border: 9px solid #aa8663; border-radius: 5px; background-color: #d9bb90;
+    background-image: radial-gradient(#b2946940 1px, transparent 1px), radial-gradient(#fff3d640 1px, transparent 1px);
+    background-size: 7px 7px, 11px 11px; background-position: 0 0, 3px 4px; }
+.sticker { position: relative; flex-shrink: 0; width: 160px; height: 140px; padding: 32px 14px 14px;
+    box-shadow: 2px 4px 7px #493e3026; cursor: grab; border: 1px solid #00000009; }
+.sticker:active { cursor: grabbing; }
+.note-text { margin: 0; height: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; line-height: 1.4; }
+.delete-note { position: absolute; top: 4px; right: 5px; width: 24px; height: 24px; line-height: 20px; border: 0; background: #ffffff66; color: #565347; font-size: 20px; }
+.delete-note:hover { background: #ffffffbb; color: #a22d36; }
+.dragging { opacity: .5; }
+.drop-active { outline: 3px dashed #526f58; outline-offset: -4px; }
+@media (max-width: 700px) {
+    body { padding: 14px; }
+    .workspace { grid-template-columns: 1fr; gap: 16px; }
+    .note-list { min-height: 170px; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    #board { height: 470px; }
+    .input-row { flex-direction: column; }
+}
